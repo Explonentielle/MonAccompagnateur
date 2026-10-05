@@ -84,15 +84,21 @@ export const solutions = [
   },
 ];
 
+import AccentDot from "./AccentDot";
+
 export default function Solutions() {
   return (
     <section id="solutions" className="mx-auto max-w-5xl px-6 py-14">
       <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary">
         Ce que nous proposons
       </p>
-      <h2 className="mt-2 text-3xl font-bold text-secondary text-center">
-        Nos solutions
-      </h2>
+      <div className="mt-2 flex items-center justify-center gap-3">
+        <AccentDot color="green" />
+        <h2 className="text-3xl font-bold text-secondary">
+          Nos solutions
+        </h2>
+        <AccentDot color="green" />
+      </div>
       <p className="mt-3 text-center text-secondary/70">
         Pour votre confort et votre indépendance énergétique.
       </p>

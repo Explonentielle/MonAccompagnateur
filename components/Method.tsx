@@ -30,6 +30,8 @@ const steps = [
   },
 ];
 
+import AccentDot from "./AccentDot";
+
 export default function Method() {
   return (
     <section id="methode" className="bg-secondary/[0.03] py-14">
@@ -37,9 +39,13 @@ export default function Method() {
         <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           Le parcours
         </p>
-        <h2 className="mt-2 text-3xl font-bold text-secondary text-center">
-          Notre méthode
-        </h2>
+        <div className="mt-2 flex items-center justify-center gap-3">
+          <AccentDot color="orange" />
+          <h2 className="text-3xl font-bold text-secondary">
+            Notre méthode
+          </h2>
+          <AccentDot color="orange" />
+        </div>
         <p className="mt-3 text-center text-secondary/70">
           Un seul parcours, plusieurs étapes, pour transformer une dépense en
           investissement utile.

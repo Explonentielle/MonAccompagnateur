@@ -2,6 +2,11 @@ export type SiteColors = {
   primary: string;
   primaryDark: string;
   secondary: string;
+  accent: {
+    orange: string;
+    blue: string;
+    green: string;
+  };
 };
 
 export type SiteConfig = {
@@ -25,5 +30,10 @@ export const defaultConfig: SiteConfig = {
     primary: "#2f9e5c",
     primaryDark: "#237a47",
     secondary: "#111111",
+    accent: {
+      orange: "#fd6f11",
+      blue: "#27b3fa",
+      green: "#269016",
+    },
   },
 };
