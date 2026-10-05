@@ -6,7 +6,7 @@ export default function FAQ() {
     },
     {
       q: "Quel est le rôle de Votre Accompagnateur ?",
-      a: "Nous sommes votre interlocuteur conseil : nous analysons votre situation et vous orientons vers la solution la plus adaptée. Les travaux sont ensuite réalisés par nos partenaires installateurs qualifiés — Votre Accompagnateur n'est pas lui-même l'installateur.",
+      a: "Nous sommes votre interlocuteur conseil: nous analysons votre situation et vous orientons vers la solution la plus adaptée. Les travaux sont ensuite réalisés par nos partenaires installateurs qualifiés. Nous ne sommes pas nous-même installateur.",
     },
     {
       q: "Vos partenaires sont-ils certifiés RGE ?",
@@ -18,7 +18,7 @@ export default function FAQ() {
     },
     {
       q: "Quelles garanties sur le matériel installé ?",
-      a: "Nous sélectionnons des équipements auprès de marques reconnues (DMEGC Solar, Atlantic, Daikin). Les garanties constructeur et main d'œuvre vous sont détaillées avec l'offre du partenaire.",
+      a: "Nous sélectionnons des équipements auprès de marques reconnues et fiables. Les garanties constructeur et main d'œuvre vous sont détaillées avec l'offre du partenaire.",
     },
     {
       q: "Photovoltaïque ou batteries : par où commencer ?",

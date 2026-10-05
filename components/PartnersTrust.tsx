@@ -1,12 +1,6 @@
 import Link from "next/link";
 
-export const partners = [
-  "SmartSun",
-  "Service Global Énergie",
-  "DMEGC Solar",
-  "Atlantic",
-  "Daikin",
-];
+export const partners = [];
 
 export default function PartnersTrust() {
   return (

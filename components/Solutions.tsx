@@ -45,7 +45,7 @@ export const solutions = [
   {
     title: "Panneaux photovoltaïques",
     icon: icon.sun,
-    partner: "DMEGC Solar",
+    partner: null,
     bullets: [
       "Production d'électricité propre et renouvelable",
       "Réduction immédiate de vos factures",
@@ -55,7 +55,7 @@ export const solutions = [
   {
     title: "Pompe à chaleur air/eau",
     icon: icon.heat,
-    partner: "Atlantic",
+    partner: null,
     bullets: [
       "Chauffage performant",
       "Économies d'énergie au quotidien",
@@ -65,7 +65,7 @@ export const solutions = [
   {
     title: "Climatisation / PAC air/air",
     icon: icon.snow,
-    partner: "Daikin",
+    partner: null,
     bullets: [
       "Chauffage et climatisation haute performance",
       "Confort toute l'année",

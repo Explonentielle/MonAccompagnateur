@@ -24,7 +24,7 @@ export default function Hero() {
 
         <p className="mt-6 text-lg text-secondary/70 max-w-2xl mx-auto">
           Étude de consommation, projection sur plusieurs années et
-          accompagnement vers une solution adaptée — avant de vendre une
+          accompagnement vers une solution adaptée. Avant de vendre une
           solution, nous vous aidons à comprendre vos chiffres.
         </p>
 
