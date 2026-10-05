@@ -1,19 +1,15 @@
-import AccentDot from "./AccentDot";
+import { defaultConfig } from "@/lib/site-config";
 
 export default function WhyUs() {
   return (
-    <section id="pourquoi-nous" className="py-14">
+    <section id="pourquoi-nous" className="py-16">
       <div className="mx-auto max-w-4xl px-6">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: defaultConfig.colors.accent.green }}>
           Notre histoire
         </p>
-        <div className="mt-2 flex items-center justify-center gap-3">
-          <AccentDot color="orange" />
-          <h2 className="text-3xl font-bold text-secondary">
-            Pourquoi Votre Accompagnateur ?
-          </h2>
-          <AccentDot color="orange" />
-        </div>
+        <h2 className="mt-2 text-3xl font-bold text-secondary text-center">
+          Pourquoi Votre Accompagnateur ?
+        </h2>
         <p className="mt-6 text-secondary/70">
           Après 11 ans d&apos;expérience commerciale dans le secteur de
           l&apos;énergie et de l&apos;amélioration de l&apos;habitat, Votre

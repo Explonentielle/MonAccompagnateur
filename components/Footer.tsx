@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { SiteConfig } from "@/lib/site-config";
+import { defaultConfig } from "@/lib/site-config";
 
 const links = [
   { href: "/#pourquoi-nous", label: "Pourquoi nous" },
@@ -12,10 +13,10 @@ const links = [
 
 export default function Footer({ config }: { config: SiteConfig }) {
   return (
-    <footer className="bg-secondary text-white">
+    <footer className="bg-secondary text-white" style={{ borderTopWidth: "3px", borderTopColor: defaultConfig.colors.accent.green }}>
       <div className="mx-auto max-w-6xl px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full" style={{ backgroundColor: defaultConfig.colors.accent.green }}>
             <svg viewBox="0 0 24 24" fill="none" className="h-4.5 w-4.5" aria-hidden="true">
               <path
                 d="M4 5.5A1.5 1.5 0 0 1 5.5 4h2A1.5 1.5 0 0 1 9 5.5v1.086a1.5 1.5 0 0 1-.44 1.06l-.812.813a11.5 11.5 0 0 0 6.793 6.793l.813-.812a1.5 1.5 0 0 1 1.06-.44H18.5A1.5 1.5 0 0 1 20 15.5v2a1.5 1.5 0 0 1-1.5 1.5C10.492 19 5 13.508 5 6.5A1.5 1.5 0 0 1 4 5.5Z"

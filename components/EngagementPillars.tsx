@@ -46,12 +46,14 @@ const pillars = [
   },
 ];
 
+import { defaultConfig } from "@/lib/site-config";
+
 export default function EngagementPillars() {
   return (
-    <section className="bg-secondary/[0.03] py-14">
+    <section className="py-16">
       <div className="mx-auto max-w-6xl px-6">
       <h2 className="text-3xl font-bold text-secondary text-center">
-        Votre projet, <span className="text-primary">notre engagement</span>
+        Votre projet, <span style={{ color: defaultConfig.colors.accent.green }}>notre engagement</span>
       </h2>
       <p className="mt-3 text-center text-secondary/70 max-w-2xl mx-auto">
         Votre Accompagnateur vous guide à chaque étape de votre projet de
@@ -64,7 +66,7 @@ export default function EngagementPillars() {
             key={pillar.title}
             className="rounded-2xl bg-white p-6 shadow-sm border border-black/5"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full" style={{ backgroundColor: defaultConfig.colors.accent.green }}>
               {pillar.icon}
             </div>
             <h3 className="mt-4 text-base font-semibold text-secondary">

@@ -17,11 +17,13 @@ const values = [
   },
 ];
 
+import { defaultConfig } from "@/lib/site-config";
+
 export default function Advisor() {
   return (
-    <section id="qui-sommes-nous" className="py-14">
+    <section id="qui-sommes-nous" className="py-16" style={{ backgroundColor: `${defaultConfig.colors.accent.green}12` }}>
       <div className="mx-auto max-w-4xl px-6">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: defaultConfig.colors.accent.green }}>
           L&apos;équipe
         </p>
         <h2 className="mt-2 text-3xl font-bold text-secondary text-center">
@@ -29,7 +31,7 @@ export default function Advisor() {
         </h2>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-8 rounded-2xl bg-white p-8 sm:p-10 shadow-sm border border-black/5">
-          <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-primary text-3xl font-bold text-white">
+          <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full text-3xl font-bold text-white" style={{ backgroundColor: defaultConfig.colors.accent.green }}>
             W
           </div>
           <div className="text-center sm:text-left">

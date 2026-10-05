@@ -1,12 +1,13 @@
 import Link from "next/link";
+import { defaultConfig } from "@/lib/site-config";
 
 export const partners = [];
 
 export default function PartnersTrust() {
   return (
-    <section id="partenaires" className="bg-secondary/[0.03] py-14">
+    <section id="partenaires" className="py-16" style={{ backgroundColor: `${defaultConfig.colors.accent.green}12` }}>
       <div className="mx-auto max-w-6xl px-6 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: defaultConfig.colors.accent.green }}>
           Un réseau qualifié
         </p>
         <h2 className="mt-2 text-3xl font-bold text-secondary">Nos partenaires</h2>

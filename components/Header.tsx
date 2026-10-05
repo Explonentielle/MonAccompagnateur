@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { SiteConfig } from "@/lib/site-config";
+import { defaultConfig } from "@/lib/site-config";
 
 const links = [
   { href: "/#methode", label: "Notre méthode" },
@@ -11,7 +12,7 @@ const links = [
 
 export default function Header({ config }: { config: SiteConfig }) {
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-black/5">
+    <header className="sticky top-0 z-50 bg-white" style={{ borderBottomWidth: "3px", borderBottomColor: defaultConfig.colors.accent.green }}>
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
           <Image src="/logo.png" alt="" width={36} height={36} className="h-9 w-9 object-contain" />
@@ -19,7 +20,7 @@ export default function Header({ config }: { config: SiteConfig }) {
             <span className="block text-sm font-bold text-secondary tracking-wide uppercase">
               {config.brandName}
             </span>
-            <span className="hidden sm:block text-[11px] text-primary font-medium">
+            <span className="hidden sm:block text-[11px] font-medium" style={{ color: defaultConfig.colors.accent.green }}>
               {config.tagline}
             </span>
           </span>
@@ -37,7 +38,8 @@ export default function Header({ config }: { config: SiteConfig }) {
         </nav>
         <Link
           href="/contact"
-          className="shrink-0 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-dark transition-colors"
+          className="shrink-0 rounded-full px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity"
+          style={{ backgroundColor: defaultConfig.colors.accent.green }}
         >
           Étude gratuite
         </Link>

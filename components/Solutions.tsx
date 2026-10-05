@@ -84,32 +84,29 @@ export const solutions = [
   },
 ];
 
-import AccentDot from "./AccentDot";
+import { defaultConfig } from "@/lib/site-config";
 
 export default function Solutions() {
   return (
-    <section id="solutions" className="mx-auto max-w-5xl px-6 py-14">
-      <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-        Ce que nous proposons
-      </p>
-      <div className="mt-2 flex items-center justify-center gap-3">
-        <AccentDot color="green" />
-        <h2 className="text-3xl font-bold text-secondary">
+    <section id="solutions" className="py-16" style={{ backgroundColor: `${defaultConfig.colors.accent.orange}12` }}>
+      <div className="mx-auto max-w-5xl px-6">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: defaultConfig.colors.accent.orange }}>
+          Ce que nous proposons
+        </p>
+        <h2 className="mt-2 text-3xl font-bold text-secondary text-center">
           Nos solutions
         </h2>
-        <AccentDot color="green" />
-      </div>
-      <p className="mt-3 text-center text-secondary/70">
-        Pour votre confort et votre indépendance énergétique.
-      </p>
-      <div className="mt-10 grid gap-8 sm:grid-cols-2">
+        <p className="mt-3 text-center text-secondary/70">
+          Pour votre confort et votre indépendance énergétique.
+        </p>
+        <div className="mt-10 grid gap-8 sm:grid-cols-2">
         {solutions.map((s) => (
           <div
             key={s.title}
             className="rounded-2xl bg-white p-8 shadow-sm border border-black/5"
           >
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: defaultConfig.colors.accent.orange }}>
                 {s.icon}
               </div>
               <div>
@@ -126,13 +123,14 @@ export default function Solutions() {
             <ul className="mt-4 space-y-2">
               {s.bullets.map((b) => (
                 <li key={b} className="flex items-start gap-2 text-sm text-secondary/70">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: defaultConfig.colors.accent.orange }} />
                   {b}
                 </li>
               ))}
             </ul>
           </div>
         ))}
+        </div>
       </div>
     </section>
   );

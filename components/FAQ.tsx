@@ -1,3 +1,5 @@
+import { defaultConfig } from "@/lib/site-config";
+
 export default function FAQ() {
   const faqs = [
     {
@@ -27,14 +29,15 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="mx-auto w-full max-w-4xl px-6 py-14">
-      <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-        FAQ
-      </p>
-      <h2 className="mt-2 text-3xl font-bold text-secondary text-center">
-        Questions fréquentes
-      </h2>
-      <div className="mt-10 w-full space-y-4">
+    <section className="py-16" style={{ backgroundColor: `${defaultConfig.colors.accent.green}12` }}>
+      <div className="mx-auto w-full max-w-4xl px-6">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: defaultConfig.colors.accent.green }}>
+          FAQ
+        </p>
+        <h2 className="mt-2 text-3xl font-bold text-secondary text-center">
+          Questions fréquentes
+        </h2>
+        <div className="mt-10 w-full space-y-4">
         {faqs.map((item) => (
           <details
             key={item.q}
@@ -43,13 +46,14 @@ export default function FAQ() {
           >
             <summary className="w-full cursor-pointer list-none flex items-center justify-between gap-4 font-medium text-secondary">
               {item.q}
-              <span className="shrink-0 text-primary text-xl leading-none transition-transform group-open:rotate-45">
+              <span className="shrink-0 text-xl leading-none transition-transform group-open:rotate-45" style={{ color: defaultConfig.colors.accent.green }}>
                 +
               </span>
             </summary>
             <p className="mt-3 text-sm text-secondary/70">{item.a}</p>
           </details>
         ))}
+        </div>
       </div>
     </section>
   );

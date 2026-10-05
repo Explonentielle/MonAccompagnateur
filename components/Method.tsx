@@ -30,22 +30,18 @@ const steps = [
   },
 ];
 
-import AccentDot from "./AccentDot";
+import { defaultConfig } from "@/lib/site-config";
 
 export default function Method() {
   return (
-    <section id="methode" className="bg-secondary/[0.03] py-14">
+    <section id="methode" className="py-16" style={{ backgroundColor: `${defaultConfig.colors.accent.blue}12` }}>
       <div className="mx-auto max-w-4xl px-6">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: defaultConfig.colors.accent.blue }}>
           Le parcours
         </p>
-        <div className="mt-2 flex items-center justify-center gap-3">
-          <AccentDot color="orange" />
-          <h2 className="text-3xl font-bold text-secondary">
-            Notre méthode
-          </h2>
-          <AccentDot color="orange" />
-        </div>
+        <h2 className="mt-2 text-3xl font-bold text-secondary text-center">
+          Notre méthode
+        </h2>
         <p className="mt-3 text-center text-secondary/70">
           Un seul parcours, plusieurs étapes, pour transformer une dépense en
           investissement utile.
@@ -53,11 +49,12 @@ export default function Method() {
         <div className="relative mt-10 space-y-6">
           <div
             aria-hidden="true"
-            className="absolute left-5 top-2 bottom-2 w-px bg-primary/20"
+            className="absolute left-5 top-2 bottom-2 w-px"
+            style={{ backgroundColor: defaultConfig.colors.accent.blue }}
           />
           {steps.map((step, index) => (
             <div key={step.title} className="relative flex gap-5">
-              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-base font-bold text-white">
+              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-bold text-white" style={{ backgroundColor: defaultConfig.colors.accent.blue }}>
                 {index + 1}
               </div>
               <div className="pt-1.5">

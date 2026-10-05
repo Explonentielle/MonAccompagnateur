@@ -16,11 +16,13 @@ const testimonials = [
   },
 ];
 
+import { defaultConfig } from "@/lib/site-config";
+
 export default function Testimonials() {
   return (
-    <section className="bg-secondary/[0.03] py-14">
+    <section className="py-16" style={{ backgroundColor: `${defaultConfig.colors.accent.green}12` }}>
       <div className="mx-auto max-w-6xl px-6">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: defaultConfig.colors.accent.green }}>
           Avis
         </p>
         <h2 className="mt-2 text-3xl font-bold text-secondary text-center">
