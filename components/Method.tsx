@@ -1,3 +1,5 @@
+import SectionHeading from "./SectionHeading";
+
 const steps = [
   {
     title: "Comprendre",
@@ -30,38 +32,46 @@ const steps = [
   },
 ];
 
-import { defaultConfig } from "@/lib/site-config";
-
 export default function Method() {
   return (
-    <section id="methode" className="py-16" style={{ backgroundColor: `${defaultConfig.colors.accent.blue}12` }}>
-      <div className="mx-auto max-w-4xl px-6">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: defaultConfig.colors.accent.blue }}>
-          Le parcours
-        </p>
-        <h2 className="mt-2 text-3xl font-bold text-secondary text-center">
-          Notre méthode
-        </h2>
-        <p className="mt-3 text-center text-secondary/70">
-          Un seul parcours, plusieurs étapes, pour transformer une dépense en
-          investissement utile.
-        </p>
-        <div className="relative mt-10 space-y-6">
-          <div
-            aria-hidden="true"
-            className="absolute left-5 top-2 bottom-2 w-px"
-            style={{ backgroundColor: defaultConfig.colors.accent.blue }}
-          />
+    <section id="methode" className="relative overflow-hidden bg-secondary py-24 text-white">
+      <div aria-hidden="true" className="bg-grid absolute inset-0" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-[26rem] w-[26rem] rounded-full bg-primary/30 blur-[120px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-primary/15 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-6xl px-6">
+        <SectionHeading
+          tone="dark"
+          eyebrow="Le parcours"
+          title={
+            <>
+              Notre <span className="text-primary-light">méthode</span>
+            </>
+          }
+          description="Un seul parcours, plusieurs étapes, pour transformer une dépense en investissement utile."
+        />
+
+        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map((step, index) => (
-            <div key={step.title} className="relative flex gap-5">
-              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-bold text-white" style={{ backgroundColor: defaultConfig.colors.accent.blue }}>
-                {index + 1}
+            <div
+              key={step.title}
+              className="reveal group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary-light/60 hover:bg-white/[0.08]"
+            >
+              <div className="flex items-start justify-between">
+                <span className="text-6xl font-extrabold leading-none tracking-tight text-primary-light">
+                  0{index + 1}
+                </span>
+                <span className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-white/55">
+                  Étape {index + 1} sur {steps.length}
+                </span>
               </div>
-              <div className="pt-1.5">
-                <h3 className="text-lg font-semibold text-secondary">
-                  {step.title}
-                </h3>
-                <p className="mt-1 text-secondary/70">{step.description}</p>
+              <h3 className="mt-8 text-2xl font-extrabold">{step.title}</h3>
+              <p className="mt-3 text-white/65">{step.description}</p>
+              <div className="mt-8 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+                <div
+                  className="h-full rounded-full bg-primary-light"
+                  style={{ width: `${((index + 1) / steps.length) * 100}%` }}
+                />
               </div>
             </div>
           ))}

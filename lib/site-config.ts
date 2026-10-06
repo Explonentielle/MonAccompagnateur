@@ -2,11 +2,7 @@ export type SiteColors = {
   primary: string;
   primaryDark: string;
   secondary: string;
-  accent: {
-    orange: string;
-    blue: string;
-    green: string;
-  };
+  accent: string;
 };
 
 export type SiteConfig = {
@@ -27,13 +23,9 @@ export const defaultConfig: SiteConfig = {
   email: "willy.votreaccompagnateur@gmail.com",
   zone: "Bordeaux et ses alentours",
   colors: {
-    primary: "#2f9e5c",
-    primaryDark: "#237a47",
+    primary: "#269016",
+    primaryDark: "#1c6f10",
     secondary: "#111111",
-    accent: {
-      orange: "#fd6f11",
-      blue: "#27b3fa",
-      green: "#269016",
-    },
+    accent: "#fd6f11",
   },
 };

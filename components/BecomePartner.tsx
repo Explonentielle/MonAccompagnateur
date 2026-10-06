@@ -1,3 +1,5 @@
+import SectionHeading from "./SectionHeading";
+
 const benefits = [
   {
     title: "Présence terrain",
@@ -23,17 +25,15 @@ const benefits = [
 
 export default function BecomePartner() {
   return (
-    <section className="bg-secondary/[0.03] py-14">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-secondary">Devenir partenaire</h2>
-          <p className="mt-3 text-secondary/70">
-            Développez votre visibilité terrain et votre chiffre d&apos;affaires
-            grâce à une représentation directe auprès des particuliers.
-          </p>
-        </div>
+    <section className="bg-secondary/[0.04] py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <SectionHeading
+          eyebrow="Rejoignez-nous"
+          title="Devenir partenaire"
+          description="Développez votre visibilité terrain et votre chiffre d'affaires grâce à une représentation directe auprès des particuliers."
+        />
 
-        <p className="mt-8 text-secondary/70">
+        <p className="reveal mx-auto mt-10 max-w-3xl text-center text-secondary/70 sm:text-lg">
           Votre Accompagnateur propose aux particuliers un accompagnement
           gratuit pour les aider à comprendre leurs besoins, étudier leurs
           dépenses énergétiques et identifier les solutions les plus adaptées
@@ -42,19 +42,24 @@ export default function BecomePartner() {
           solaire, chauffage, climatisation, toiture et isolation.
         </p>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {benefits.map((b) => (
+        <div className="mt-12 grid gap-5 sm:grid-cols-2">
+          {benefits.map((b, index) => (
             <div
               key={b.title}
-              className="rounded-xl bg-white p-5 shadow-sm border border-black/5"
+              className="reveal group flex gap-5 rounded-[1.75rem] bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <h3 className="text-sm font-semibold text-secondary">{b.title}</h3>
-              <p className="mt-1.5 text-sm text-secondary/70">{b.description}</p>
+              <span className="text-4xl font-extrabold text-primary/25 transition-colors group-hover:text-primary">
+                0{index + 1}
+              </span>
+              <div>
+                <h3 className="text-lg font-extrabold text-secondary">{b.title}</h3>
+                <p className="mt-2 text-sm text-secondary/65">{b.description}</p>
+              </div>
             </div>
           ))}
         </div>
 
-        <p className="mt-8 text-secondary/70">
+        <p className="reveal mx-auto mt-12 max-w-3xl text-center text-secondary/70 sm:text-lg">
           Le particulier bénéficie d&apos;un interlocuteur unique pour être
           orienté vers un installateur RGE (Reconnu Garant de
           l&apos;Environnement), avec une prise en charge claire du projet et
@@ -65,17 +70,19 @@ export default function BecomePartner() {
           opportunités de développement.
         </p>
 
-        <div className="mt-10 rounded-2xl bg-primary p-8 text-center text-white">
-          <p className="font-semibold">
+        <div className="reveal relative mt-14 overflow-hidden rounded-[2rem] bg-secondary p-10 text-center text-white sm:p-14">
+          <div aria-hidden="true" className="bg-grid absolute inset-0" />
+          <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 h-60 w-[30rem] -translate-x-1/2 rounded-full bg-primary/40 blur-[100px]" />
+          <p className="relative text-2xl font-extrabold sm:text-3xl">
             Vous êtes installateur ou entreprise spécialisée ?
           </p>
-          <p className="mt-1 text-white/90">
+          <p className="relative mt-3 text-white/65">
             Échangeons sur la mise en place d&apos;un partenariat avec Votre
             Accompagnateur.
           </p>
           <a
             href="/contact"
-            className="mt-5 inline-block rounded-full bg-white px-6 py-2.5 text-sm font-medium text-primary-dark hover:bg-white/90 transition-colors"
+            className="relative mt-8 inline-block rounded-full bg-primary px-8 py-4 text-sm font-bold text-white shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 hover:bg-primary-dark"
           >
             Nous contacter
           </a>

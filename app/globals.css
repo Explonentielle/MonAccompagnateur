@@ -4,10 +4,17 @@
   --background: #ffffff;
   --foreground: #111111;
 
-  /* Charte graphique "Votre Accompagnateur" : noir / blanc / vert */
-  --color-primary: #2f9e5c;
-  --color-primary-dark: #237a47;
+  /* Charte : vert (primaire), noir (secondaire), orange (accent discret) */
+  --color-primary: #269016;
+  --color-primary-dark: #1c6f10;
   --color-secondary: #111111;
+  --color-accent: #fd6f11;
+}
+
+body {
+  /* Variantes dérivées, recalculées si le thème est surchargé sur le body */
+  --color-primary-light: color-mix(in srgb, var(--color-primary) 65%, white);
+  --color-accent-dark: color-mix(in srgb, var(--color-accent) 78%, black);
 }
 
 @theme inline {
@@ -15,13 +22,99 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--color-primary);
   --color-primary-dark: var(--color-primary-dark);
+  --color-primary-light: var(--color-primary-light);
   --color-secondary: var(--color-secondary);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--color-accent);
+  --color-accent-dark: var(--color-accent-dark);
+  --font-sans: var(--font-brand);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 4.5rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-brand), system-ui, sans-serif;
+}
+
+/* Trame de fond pour les sections sombres */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, #000 25%, transparent 75%);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.8s 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Apparition au scroll, uniquement si le navigateur le supporte */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-up,
+  .animate-float,
+  .reveal {
+    animation: none;
+  }
+
+  .animate-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
 }

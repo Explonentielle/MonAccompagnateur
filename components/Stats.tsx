@@ -1,5 +1,3 @@
-import { defaultConfig } from "@/lib/site-config";
-
 const stats = [
   { value: "0 €", label: "Coût de l'étude, toujours gratuite" },
   { value: "48h", label: "Délai de réponse moyen" },
@@ -9,12 +7,19 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="border-b border-black/5 bg-white" style={{ borderBottomColor: defaultConfig.colors.accent.green, borderBottomWidth: "2px" }}>
-      <div className="mx-auto max-w-6xl px-6 py-8 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
-        {stats.map((stat) => (
-          <div key={stat.label}>
-            <p className="text-3xl sm:text-4xl font-bold" style={{ color: defaultConfig.colors.accent.green }}>{stat.value}</p>
-            <p className="mt-1 text-xs sm:text-sm text-secondary/60">{stat.label}</p>
+    <section className="relative z-10 -mt-16 px-6">
+      <div className="reveal mx-auto grid max-w-6xl grid-cols-2 overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-2xl shadow-black/10 lg:grid-cols-4">
+        {stats.map((stat, index) => (
+          <div
+            key={stat.label}
+            className={`px-6 py-8 text-center ${index % 2 === 1 ? "border-l" : ""} ${
+              index > 1 ? "border-t lg:border-t-0" : ""
+            } ${index > 0 ? "lg:border-l" : ""} border-black/5`}
+          >
+            <p className="text-3xl font-extrabold tracking-tight text-primary sm:text-4xl">
+              {stat.value}
+            </p>
+            <p className="mt-2 text-xs font-medium text-secondary/60 sm:text-sm">{stat.label}</p>
           </div>
         ))}
       </div>

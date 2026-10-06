@@ -70,8 +70,8 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl bg-primary/5 border border-primary/20 p-8 text-center">
-        <p className="text-secondary font-medium">
+      <div className="rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center">
+        <p className="text-lg font-extrabold text-secondary">
           Merci, votre demande a bien été envoyée !
         </p>
         <p className="mt-1 text-sm text-secondary/70">
@@ -86,7 +86,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-secondary">
+          <label htmlFor="name" className="block text-sm font-bold text-secondary">
             Nom
           </label>
           <input
@@ -94,11 +94,11 @@ export default function ContactForm() {
             name="name"
             type="text"
             required
-            className="mt-1 w-full rounded-lg border border-black/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-secondary">
+          <label htmlFor="email" className="block text-sm font-bold text-secondary">
             Email
           </label>
           <input
@@ -106,14 +106,14 @@ export default function ContactForm() {
             name="email"
             type="email"
             required
-            className="mt-1 w-full rounded-lg border border-black/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
           />
         </div>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-secondary">
+          <label htmlFor="phone" className="block text-sm font-bold text-secondary">
             Téléphone
           </label>
           <input
@@ -121,11 +121,11 @@ export default function ContactForm() {
             name="phone"
             type="tel"
             required
-            className="mt-1 w-full rounded-lg border border-black/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
           />
         </div>
         <div>
-          <label htmlFor="commune" className="block text-sm font-medium text-secondary">
+          <label htmlFor="commune" className="block text-sm font-bold text-secondary">
             Commune
           </label>
           <input
@@ -133,14 +133,14 @@ export default function ContactForm() {
             name="commune"
             type="text"
             required
-            className="mt-1 w-full rounded-lg border border-black/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
           />
         </div>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="projectType" className="block text-sm font-medium text-secondary">
+          <label htmlFor="projectType" className="block text-sm font-bold text-secondary">
             Type de projet
           </label>
           <select
@@ -148,7 +148,7 @@ export default function ContactForm() {
             name="projectType"
             required
             defaultValue=""
-            className="mt-1 w-full rounded-lg border border-black/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
           >
             <option value="" disabled>
               Sélectionnez une option
@@ -161,7 +161,7 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="timeSlot" className="block text-sm font-medium text-secondary">
+          <label htmlFor="timeSlot" className="block text-sm font-bold text-secondary">
             Créneau souhaité
           </label>
           <select
@@ -169,7 +169,7 @@ export default function ContactForm() {
             name="timeSlot"
             required
             defaultValue=""
-            className="mt-1 w-full rounded-lg border border-black/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
           >
             <option value="" disabled>
               Sélectionnez une option
@@ -183,19 +183,19 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-secondary">
+        <label htmlFor="message" className="block text-sm font-bold text-secondary">
           Votre projet (facultatif)
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
-          className="mt-1 w-full rounded-lg border border-black/10 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+          className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
         />
       </div>
 
       <div>
-        <label htmlFor="invoice" className="block text-sm font-medium text-secondary">
+        <label htmlFor="invoice" className="block text-sm font-bold text-secondary">
           Facture énergétique (facultatif)
         </label>
         <input
@@ -203,7 +203,7 @@ export default function ContactForm() {
           name="invoice"
           type="file"
           accept=".pdf,.jpg,.jpeg,.png"
-          className="mt-1 w-full rounded-lg border border-black/10 px-4 py-2 text-sm file:mr-3 file:rounded-full file:border-0 file:bg-primary/10 file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-primary-dark focus:outline-none focus:ring-2 focus:ring-primary/50"
+          className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm file:mr-3 file:rounded-full file:border-0 file:bg-primary/10 file:px-4 file:py-1.5 file:text-sm file:font-bold file:text-primary-dark focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
         />
         <p className="mt-1 text-xs text-secondary/50">PDF ou photo, 8 Mo maximum.</p>
       </div>
@@ -232,7 +232,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full rounded-full bg-primary px-6 py-3 text-sm font-medium text-white hover:bg-primary-dark transition-colors disabled:opacity-60"
+        className="w-full rounded-full bg-primary px-6 py-4 text-sm font-bold text-white shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 hover:bg-primary-dark disabled:opacity-60"
       >
         {status === "sending" ? "Envoi en cours..." : "Demander mon étude gratuite"}
       </button>
