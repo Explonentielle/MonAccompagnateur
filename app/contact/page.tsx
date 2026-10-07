@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { defaultConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -38,8 +39,17 @@ export default function ContactPage() {
               {defaultConfig.phone}
             </a>
             <a
+              href={defaultConfig.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-dark"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+              Écrire sur WhatsApp
+            </a>
+            <a
               href={`mailto:${defaultConfig.email}`}
-              className="relative mt-3 block break-all text-white/70 transition-colors hover:text-white"
+              className="relative mt-4 block break-all text-white/70 transition-colors hover:text-white"
             >
               {defaultConfig.email}
             </a>

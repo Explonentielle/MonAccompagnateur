@@ -1,11 +1,10 @@
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import EngagementPillars from "@/components/EngagementPillars";
-import WhyUs from "@/components/WhyUs";
+import About from "@/components/About";
 import Method from "@/components/Method";
 import Solutions from "@/components/Solutions";
 import PartnersTrust from "@/components/PartnersTrust";
-import Advisor from "@/components/Advisor";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import { defaultConfig } from "@/lib/site-config";
@@ -16,11 +15,10 @@ export default function Home() {
       <Hero />
       <Stats />
       <EngagementPillars />
-      <WhyUs />
+      <About />
       <Method />
       <Solutions />
       <PartnersTrust />
-      <Advisor />
       <Testimonials />
       <FAQ />
       <section className="relative overflow-hidden bg-secondary py-24 text-center text-white">

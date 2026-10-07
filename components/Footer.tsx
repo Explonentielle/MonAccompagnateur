@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { SiteConfig } from "@/lib/site-config";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 const links = [
   { href: "/#pourquoi-nous", label: "Pourquoi nous" },
@@ -17,16 +18,16 @@ export default function Footer({ config }: { config: SiteConfig }) {
   return (
     <footer className="bg-secondary text-white">
       <div className="border-t border-white/10">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-14 md:grid-cols-[1.3fr_1fr_1fr]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 text-center md:grid-cols-[1.3fr_1fr_1fr] md:gap-12 md:py-14 md:text-left">
           <div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3 md:justify-start">
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white">
                 <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8 object-contain" />
               </span>
               <span className="text-sm font-extrabold uppercase tracking-wide">{config.brandName}</span>
             </div>
-            <p className="mt-5 max-w-xs text-sm text-white/60">{config.tagline}</p>
-            <ul className="mt-6 flex flex-wrap gap-2">
+            <p className="mx-auto mt-5 max-w-xs text-sm text-white/60 md:mx-0">{config.tagline}</p>
+            <ul className="mt-6 flex flex-wrap justify-center gap-2 md:justify-start">
               {values.map((value) => (
                 <li
                   key={value}
@@ -40,7 +41,7 @@ export default function Footer({ config }: { config: SiteConfig }) {
 
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/40">Navigation</p>
-            <ul className="mt-5 space-y-3 text-sm">
+            <ul className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-3 text-sm md:block md:space-y-3">
               {links.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-white/70 transition-colors hover:text-primary-light">
@@ -61,8 +62,17 @@ export default function Footer({ config }: { config: SiteConfig }) {
               {config.phone}
             </a>
             <a
+              href={config.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition-colors hover:text-primary-light"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              Nous écrire sur WhatsApp
+            </a>
+            <a
               href={`mailto:${config.email}`}
-              className="mt-4 block break-all text-sm text-white/70 transition-colors hover:text-white"
+              className="mt-3 block break-all text-sm text-white/70 transition-colors hover:text-white"
             >
               {config.email}
             </a>

@@ -34,7 +34,7 @@ const steps = [
 
 export default function Method() {
   return (
-    <section id="methode" className="relative overflow-hidden bg-secondary py-24 text-white">
+    <section id="methode" className="relative overflow-hidden bg-secondary py-16 text-white sm:py-24">
       <div aria-hidden="true" className="bg-grid absolute inset-0" />
       <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-[26rem] w-[26rem] rounded-full bg-primary/30 blur-[120px]" />
       <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-primary/15 blur-[120px]" />
@@ -51,23 +51,23 @@ export default function Method() {
           description="Un seul parcours, plusieurs étapes, pour transformer une dépense en investissement utile."
         />
 
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-16 sm:gap-5 lg:grid-cols-3">
           {steps.map((step, index) => (
             <div
               key={step.title}
-              className="reveal group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary-light/60 hover:bg-white/[0.08]"
+              className="reveal group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary-light/60 hover:bg-white/[0.08] sm:rounded-[1.75rem] sm:p-8"
             >
               <div className="flex items-start justify-between">
-                <span className="text-6xl font-extrabold leading-none tracking-tight text-primary-light">
+                <span className="text-4xl font-extrabold leading-none tracking-tight text-primary-light sm:text-6xl">
                   0{index + 1}
                 </span>
-                <span className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-white/55">
+                <span className="hidden rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-white/55 sm:inline-block">
                   Étape {index + 1} sur {steps.length}
                 </span>
               </div>
-              <h3 className="mt-8 text-2xl font-extrabold">{step.title}</h3>
-              <p className="mt-3 text-white/65">{step.description}</p>
-              <div className="mt-8 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+              <h3 className="mt-4 text-lg font-extrabold sm:mt-8 sm:text-2xl">{step.title}</h3>
+              <p className="mt-2 text-xs leading-snug text-white/65 sm:mt-3 sm:text-base sm:leading-normal">{step.description}</p>
+              <div className="mt-4 h-1 w-full overflow-hidden rounded-full bg-white/10 sm:mt-8 sm:h-1.5">
                 <div
                   className="h-full rounded-full bg-primary-light"
                   style={{ width: `${((index + 1) / steps.length) * 100}%` }}

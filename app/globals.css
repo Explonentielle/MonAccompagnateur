@@ -73,6 +73,16 @@ body {
   }
 }
 
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
 @keyframes draw {
   to {
     stroke-dashoffset: 0;
@@ -85,6 +95,10 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+.animate-nudge {
+  animation: nudge 1.2s ease-in-out infinite;
 }
 
 .animate-draw {
@@ -109,6 +123,7 @@ body {
 
   .animate-fade-up,
   .animate-float,
+  .animate-nudge,
   .reveal {
     animation: none;
   }

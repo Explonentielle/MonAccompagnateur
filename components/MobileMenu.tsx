@@ -47,13 +47,6 @@ export default function MobileMenu({
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="mt-4 rounded-full bg-primary px-5 py-3 text-center text-sm font-bold text-white sm:hidden"
-            >
-              Étude gratuite
-            </Link>
             <a
               href={`tel:${phoneHref}`}
               className="mt-4 text-sm font-semibold text-primary"

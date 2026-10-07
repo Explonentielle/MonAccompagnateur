@@ -6,12 +6,16 @@ export default function SectionHeading({
   description,
   tone = "light",
   align = "center",
+  as: Tag = "h2",
+  size = "lg",
 }: {
   eyebrow: string;
   title: ReactNode;
   description?: string;
   tone?: "light" | "dark";
   align?: "center" | "left";
+  as?: "h2" | "h3";
+  size?: "lg" | "md";
 }) {
   const centered = align === "center";
   const dark = tone === "dark";
@@ -26,13 +30,13 @@ export default function SectionHeading({
         <span aria-hidden="true" className="h-px w-8 bg-current" />
         {eyebrow}
       </span>
-      <h2
-        className={`mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl ${
-          dark ? "text-white" : "text-secondary"
-        }`}
+      <Tag
+        className={`mt-4 font-extrabold tracking-tight ${
+          size === "lg" ? "text-3xl sm:text-4xl lg:text-5xl" : "text-2xl sm:text-3xl lg:text-4xl"
+        } ${dark ? "text-white" : "text-secondary"}`}
       >
         {title}
-      </h2>
+      </Tag>
       {description && (
         <p
           className={`mt-5 text-base sm:text-lg ${centered ? "mx-auto max-w-2xl" : "max-w-xl"} ${
