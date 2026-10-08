@@ -101,14 +101,14 @@ export default function Hero() {
             Étude gratuite et sans engagement
           </span>
 
-          <h1 className="mt-7 text-4xl font-extrabold leading-[1.08] tracking-[-0.02em] sm:text-5xl lg:text-6xl">
-            Comprenez vos{" "}
+          <h1 className="mt-7 text-4xl font-extrabold leading-[1.08] tracking-[-0.02em] sm:text-5xl xl:text-6xl">
+            Organisme d&apos;accompagnement{" "}
             <span className="bg-gradient-to-r from-primary-light to-primary bg-clip-text text-transparent">
-              dépenses énergétiques.
+              gratuit
             </span>
           </h1>
           <p className="mt-4 text-xl font-semibold text-white/80 sm:text-2xl">
-            Étudions gratuitement les solutions pour les réduire.
+            dans la rénovation énergétique
           </p>
 
           <p className="mt-6 max-w-xl text-base text-white/65 sm:text-lg">

@@ -48,6 +48,14 @@ export default function Method() {
               Notre <span className="text-primary-light">méthode</span>
             </>
           }
+          lead={
+            <>
+              Comprenez vos{" "}
+              <span className="text-primary-light">dépenses énergétiques.</span>{" "}
+              <br className="hidden sm:block" />
+              Étudions gratuitement les solutions pour les réduire.
+            </>
+          }
           description="Un seul parcours, plusieurs étapes, pour transformer une dépense en investissement utile."
         />
 

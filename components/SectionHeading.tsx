@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 export default function SectionHeading({
   eyebrow,
   title,
+  lead,
   description,
   tone = "light",
   align = "center",
@@ -11,6 +12,7 @@ export default function SectionHeading({
 }: {
   eyebrow: string;
   title: ReactNode;
+  lead?: ReactNode;
   description?: string;
   tone?: "light" | "dark";
   align?: "center" | "left";
@@ -37,9 +39,18 @@ export default function SectionHeading({
       >
         {title}
       </Tag>
+      {lead && (
+        <p
+          className={`mt-5 text-xl font-bold sm:text-2xl ${centered ? "mx-auto max-w-2xl" : "max-w-xl"} ${
+            dark ? "text-white" : "text-secondary"
+          }`}
+        >
+          {lead}
+        </p>
+      )}
       {description && (
         <p
-          className={`mt-5 text-base sm:text-lg ${centered ? "mx-auto max-w-2xl" : "max-w-xl"} ${
+          className={`${lead ? "mt-4" : "mt-5"} text-base sm:text-lg ${centered ? "mx-auto max-w-2xl" : "max-w-xl"} ${
             dark ? "text-white/65" : "text-secondary/65"
           }`}
         >
