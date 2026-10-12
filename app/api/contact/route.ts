@@ -56,7 +56,7 @@ export async function POST(request: Request) {
   const resend = new Resend(apiKey);
 
   const { error } = await resend.emails.send({
-    from: "Votre Accompagnateur <onboarding@resend.dev>",
+    from: "Votre Accompagnateur <contact@votreaccompagnateur.fr>",
     to: CONTACT_EMAIL,
     replyTo: email,
     subject: `Nouvelle demande d'étude — ${name}`,
