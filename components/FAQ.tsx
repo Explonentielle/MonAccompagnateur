@@ -61,9 +61,11 @@ export default function FAQ() {
                 {item.q}
                 <span
                   aria-hidden="true"
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xl font-bold leading-none text-primary transition-all duration-300 group-open:rotate-45 group-open:bg-primary group-open:text-white"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 group-open:rotate-45 group-open:bg-primary group-open:text-white"
                 >
-                  +
+                  <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4">
+                    <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" />
+                  </svg>
                 </span>
               </summary>
               <p className="mt-4 text-secondary/70">{item.a}</p>
