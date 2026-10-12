@@ -4,6 +4,15 @@ import { Resend } from "resend";
 const CONTACT_EMAIL = "willy.votreaccompagnateur@gmail.com";
 const MAX_INVOICE_BYTES = 8 * 1024 * 1024;
 
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 export async function POST(request: Request) {
   const {
     name,
@@ -55,21 +64,46 @@ export async function POST(request: Request) {
 
   const resend = new Resend(apiKey);
 
+  const fields: [string, string][] = [
+    ["Nom", String(name)],
+    ["Email", String(email)],
+    ["Téléphone", String(phone)],
+    ["Commune", String(commune)],
+    ["Type de projet", String(projectType)],
+    ["Créneau souhaité", String(timeSlot)],
+  ];
+  const details = message ? String(message) : "(pas de détail supplémentaire)";
+
+  const rows = fields
+    .map(
+      ([label, value]) =>
+        `<tr><td style="padding:8px 20px 8px 0;color:#6b7280;vertical-align:top;white-space:nowrap">${label}</td><td style="padding:8px 0;font-weight:600;color:#111111">${escapeHtml(value)}</td></tr>`
+    )
+    .join("");
+
+  const html = `<div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5;color:#111111;max-width:560px">
+<h2 style="margin:0 0 16px;font-size:18px">Nouvelle demande d'étude gratuite</h2>
+<table style="border-collapse:collapse">${rows}</table>
+<p style="margin:24px 0 6px;color:#6b7280">Message</p>
+<p style="margin:0;padding:12px 16px;background:#f3f4f6;border-radius:8px">${escapeHtml(details).replace(/\n/g, "<br>")}</p>
+</div>`;
+
+  const text = [
+    "Nouvelle demande d'étude gratuite",
+    "",
+    ...fields.map(([label, value]) => `${label} : ${value}`),
+    "",
+    "Message :",
+    details,
+  ].join(" \n");
+
   const { error } = await resend.emails.send({
     from: "Votre Accompagnateur <contact@votreaccompagnateur.fr>",
     to: CONTACT_EMAIL,
     replyTo: email,
     subject: `Nouvelle demande d'étude — ${name}`,
-    text: [
-      `Nom : ${name}`,
-      `Email : ${email}`,
-      `Téléphone : ${phone}`,
-      `Commune : ${commune}`,
-      `Type de projet : ${projectType}`,
-      `Créneau souhaité : ${timeSlot}`,
-      "",
-      message || "(pas de détail supplémentaire)",
-    ].join("\n"),
+    html,
+    text,
     attachments,
   });
 
