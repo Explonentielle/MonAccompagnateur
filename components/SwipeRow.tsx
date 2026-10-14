@@ -6,10 +6,12 @@ export default function SwipeRow({
   children,
   label,
   desktopClassName = "sm:grid sm:grid-cols-3 sm:gap-6",
+  fadeClassName = "from-white",
 }: {
   children: ReactNode;
   label: string;
   desktopClassName?: string;
+  fadeClassName?: string;
 }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
@@ -72,7 +74,7 @@ export default function SwipeRow({
 
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent transition-opacity duration-300 sm:hidden ${
+        className={`pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l ${fadeClassName} to-transparent transition-opacity duration-300 sm:hidden ${
           atEnd ? "opacity-0" : "opacity-100"
         }`}
       />

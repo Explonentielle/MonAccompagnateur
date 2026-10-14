@@ -17,7 +17,7 @@ export default function MobileMenu({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <button
         type="button"
         aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
