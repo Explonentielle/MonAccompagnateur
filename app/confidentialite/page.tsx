@@ -4,6 +4,8 @@ import { defaultConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
+  description:
+    "Politique de confidentialité de Votre Accompagnateur : données collectées par le formulaire, finalités, destinataires et vos droits.",
 };
 
 export default function ConfidentialitePage() {

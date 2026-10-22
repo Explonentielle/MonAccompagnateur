@@ -14,9 +14,23 @@ const brandFont = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Votre Accompagnateur | Étude énergétique gratuite",
+  metadataBase: new URL(defaultConfig.siteUrl),
+  title: {
+    default: "Étude énergétique gratuite à Bordeaux | Votre Accompagnateur",
+    template: "%s | Votre Accompagnateur",
+  },
   description:
-    "Votre Accompagnateur vous aide à comprendre vos dépenses énergétiques et à étudier gratuitement les solutions pour les réduire, à Bordeaux et alentours.",
+    "Accompagnement gratuit et sans engagement pour votre rénovation énergétique à Bordeaux : étude de consommation, photovoltaïque, pompe à chaleur, batteries.",
+  applicationName: defaultConfig.brandName,
+  alternates: { canonical: "./" },
+  openGraph: {
+    type: "website",
+    url: "./",
+    locale: "fr_FR",
+    siteName: defaultConfig.brandName,
+  },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

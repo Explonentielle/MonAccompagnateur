@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Smart Sales — Filiale de formation",
+  title: "Smart Sales, filiale de formation",
   description:
     "Smart Sales, filiale de formation du groupe Votre Accompagnateur : travailler intelligemment pour un maximum de résultats.",
+  robots: { index: false, follow: true },
 };
 
 const pillars = [

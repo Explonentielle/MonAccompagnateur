@@ -9,9 +9,39 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import { defaultConfig } from "@/lib/site-config";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: defaultConfig.brandName,
+  url: defaultConfig.siteUrl,
+  logo: `${defaultConfig.siteUrl}/logo.png`,
+  image: `${defaultConfig.siteUrl}/logo.png`,
+  description:
+    "Accompagnement gratuit et sans engagement pour la rénovation énergétique : étude de consommation, photovoltaïque, pompe à chaleur, climatisation et batteries.",
+  telephone: "+33665613369",
+  email: defaultConfig.email,
+  founder: { "@type": "Person", name: "Willy Duong" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Bordeaux",
+    postalCode: "33000",
+    addressRegion: "Nouvelle-Aquitaine",
+    addressCountry: "FR",
+  },
+  areaServed: { "@type": "City", name: "Bordeaux" },
+  serviceType: ["Étude énergétique", "Accompagnement en rénovation énergétique"],
+  sameAs: [defaultConfig.googleProfileUrl],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Hero />
       <Stats />
       <EngagementPillars />

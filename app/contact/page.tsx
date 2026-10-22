@@ -5,9 +5,9 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { defaultConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Contact | Étude gratuite",
+  title: "Demander une étude gratuite",
   description:
-    "Demandez votre étude énergétique gratuite et sans engagement auprès de Votre Accompagnateur.",
+    "Demandez votre étude énergétique gratuite et sans engagement à Bordeaux et alentours. Réponse rapide par téléphone ou par e-mail.",
 };
 
 const reassurances = [

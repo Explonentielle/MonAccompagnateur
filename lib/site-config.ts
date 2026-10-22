@@ -7,6 +7,8 @@ export type SiteColors = {
 
 export type SiteConfig = {
   brandName: string;
+  siteUrl: string;
+  googleProfileUrl: string;
   tagline: string;
   phone: string;
   phoneHref: string;
@@ -18,6 +20,8 @@ export type SiteConfig = {
 
 export const defaultConfig: SiteConfig = {
   brandName: "Votre Accompagnateur",
+  siteUrl: "https://www.votreaccompagnateur.fr",
+  googleProfileUrl: "https://share.google/OYbup1DA1OSsz1Bvy",
   tagline: "Vous accompagne vers votre indépendance énergétique",
   phone: "06 65 61 33 69",
   phoneHref: "0665613369",

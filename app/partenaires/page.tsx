@@ -5,7 +5,7 @@ import { partners } from "@/components/PartnersTrust";
 import BecomePartner from "@/components/BecomePartner";
 
 export const metadata: Metadata = {
-  title: "Nos partenaires",
+  title: "Nos partenaires installateurs",
   description:
     "Un accompagnement de A à Z et un réseau de partenaires installateurs qualifiés RGE, pour votre projet énergétique.",
 };

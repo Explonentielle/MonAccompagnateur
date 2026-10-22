@@ -4,6 +4,8 @@ import { defaultConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
+  description:
+    "Mentions légales du site Votre Accompagnateur : éditeur, hébergeur et activité.",
 };
 
 export default function MentionsLegalesPage() {
